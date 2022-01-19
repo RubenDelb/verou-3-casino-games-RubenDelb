@@ -16,6 +16,28 @@
 </head>
 
 <body>
+    <header><h1>Rock, Paper, Scissors!</h1></header>
+    <nav>
+        <p id="userScore">Score: 0</p>
+        <p id="pcScore">Opp. Score: 0</p>
+        <button id="resetButton">Reset</button>
+    </nav>
+    <main>
+        <div class="gameSection">
+            <h2>Choose your weapon!</h2>
+            <div class="weaponChoice">
+                <button class="weapon" id="rock">&#128511;</button>
+                <button class="weapon" id="paper">&#129531;</button>
+                <button class="weapon" id="scissors">&#9986;</button>
+            </div>
+            <button id="playButton">Play!</button>
+        </div>
+        <div class="textSection">
+            <p class="messages" id="message1">Your weapon: </p>
+            <p class="messages" id="message2">Opponent's weapon: </p>
+            <p class="messages" id="message3"></p>
+        </div>
+    </main>
     <script src="script.js"></script>
 </body>
 
