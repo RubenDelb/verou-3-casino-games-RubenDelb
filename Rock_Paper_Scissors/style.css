@@ -26,6 +26,19 @@ nav {
     margin-right: 5%;
 }
 
+#changeBgcolor {
+    margin: 0 10px;
+    padding: 3px 10px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgba(255, 248, 220, 0);
+    cursor: pointer;
+}
+
+#changeBgcolor:hover {
+    transform: scale(1.05);
+}
+
 #resetButton {
     padding: 3px 10px;
     font-size: 14px;
