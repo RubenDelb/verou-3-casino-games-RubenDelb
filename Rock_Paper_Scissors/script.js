@@ -11,6 +11,7 @@ const playButton = document.getElementById("playButton");
 const userScore = document.getElementById("userScore");
 const pcScore = document.getElementById("pcScore");
 const changeBgcolor = document.getElementById("changeBgcolor");
+const extraWeaponsButtons = document.getElementById("extraWeaponsButtons");
 let oppScore = 0;
 let myScore = 0;
 
@@ -47,59 +48,21 @@ const play = (event) => {
     const randomWeapon = weaponArray[Math.floor(Math.random() * weaponArray.length)];
     message2.innerHTML = "Opponent's weapon: " + randomWeapon;
     playButton.innerHTML = "Play again!"
-    if (randomWeapon == "Paper" && message1.innerHTML == "Your weapon: Rock") {
+    if ((randomWeapon == "Paper" && message1.innerHTML == "Your weapon: Rock") || (randomWeapon == "Scissors" && message1.innerHTML == "Your weapon: Paper") || (randomWeapon == "Rock" && message1.innerHTML == "Your weapon: Scissors")) {
         oppScore += 1;
         pcScore.innerHTML = "Opp. Score: " + oppScore
         message3.style.color = "#ffffff"
         message3.style.textShadow = "0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00, 7px 7px 7px #CE5937";
         message3.innerHTML = "YOU LOSE"
     }
-    if (randomWeapon == "Scissors" && message1.innerHTML == "Your weapon: Paper") {
-        oppScore += 1;
-        pcScore.innerHTML = "Opp. Score: " + oppScore
-        message3.style.color = "#ffffff"
-        message3.style.textShadow = "0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00, 7px 7px 7px #CE5937";
-        message3.innerHTML = "YOU LOSE"
-    }
-    if (randomWeapon == "Rock" && message1.innerHTML == "Your weapon: Scissors") {
-        oppScore += 1;
-        pcScore.innerHTML = "Opp. Score: " + oppScore
-        message3.style.color = "#ffffff"
-        message3.style.textShadow = "0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00, 7px 7px 7px #CE5937";
-        message3.innerHTML = "YOU LOSE"
-    }
-    if (randomWeapon == "Rock" && message1.innerHTML == "Your weapon: Paper") {
+    if ((randomWeapon == "Rock" && message1.innerHTML == "Your weapon: Paper") || (randomWeapon == "Paper" && message1.innerHTML == "Your weapon: Scissors") || (randomWeapon == "Scissors" && message1.innerHTML == "Your weapon: Rock")) {
         myScore += 1;
         userScore.innerHTML = "Score: " + myScore
         message3.style.color = "#ffffff"
         message3.style.textShadow = "0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 0px 0px 0px rgba(206,89,55,0)";
         message3.innerHTML = "YOU WIN"
     }
-    if (randomWeapon == "Paper" && message1.innerHTML == "Your weapon: Scissors") {
-        myScore += 1;
-        userScore.innerHTML = "Score: " + myScore
-        message3.style.color = "#ffffff"
-        message3.style.textShadow = "0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 0px 0px 0px rgba(206,89,55,0)";
-        message3.innerHTML = "YOU WIN"
-    }
-    if (randomWeapon == "Scissors" && message1.innerHTML == "Your weapon: Rock") {
-        myScore += 1;
-        userScore.innerHTML = "Score: " + myScore
-        message3.style.color = "#000000"
-        message3.style.textShadow = "0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 0px 0px 0px rgba(206,89,55,0)";
-        message3.innerHTML = "YOU WIN"
-    }
-    if (randomWeapon == "Rock" && message1.innerHTML == "Your weapon: Rock") {
-        message3.style.color = "#ffffff"
-        message3.style.textShadow = "2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c";
-        message3.innerHTML = "DRAW!"
-    }
-    if (randomWeapon == "Paper" && message1.innerHTML == "Your weapon: Paper") {
-        message3.style.color = "#ffffff"
-        message3.style.textShadow = "2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c";
-        message3.innerHTML = "DRAW!"
-    }
-    if (randomWeapon == "Scissors" && message1.innerHTML == "Your weapon: Scissors") {
+    if ((randomWeapon == "Rock" && message1.innerHTML == "Your weapon: Rock") || (randomWeapon == "Paper" && message1.innerHTML == "Your weapon: Paper") || (randomWeapon == "Scissors" && message1.innerHTML == "Your weapon: Scissors")) {
         message3.style.color = "#ffffff"
         message3.style.textShadow = "2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c";
         message3.innerHTML = "DRAW!"
@@ -117,8 +80,8 @@ const reset = () => {
     rock.style.backgroundColor = "white";
     paper.style.backgroundColor = "white";
     scissors.style.backgroundColor = "white";
-    userScore.innerHTML = "Score: " + myScore ;
-    pcScore.innerHTML = "Opp. Score: " + oppScore ;
+    userScore.innerHTML = "Score: " + myScore;
+    pcScore.innerHTML = "Opp. Score: " + oppScore;
     playButton.innerHTML = "Play !"
 }
 
@@ -128,8 +91,31 @@ resetButton.addEventListener("click", reset);
 const setBg = () => {
     const randomColor = Math.floor(Math.random() * 16777215).toString(16);
     const randomColor2 = Math.floor(Math.random() * 16777215).toString(16);
-    const randomDegree = Math.floor(Math.random() * 360) + "deg"; 
+    const randomDegree = Math.floor(Math.random() * 360) + "deg";
     document.body.style.background = "linear-gradient(" + randomDegree + ", #" + randomColor + ", #" + randomColor2 + ")";
 }
 
 changeBgcolor.addEventListener("click", setBg);
+
+const addLizardSpock = document.getElementById("addLizardSpock");
+const noLizardSpock = document.getElementById("noLizardSpock");
+const weaponDiv = document.getElementById("weaponChoice");
+const lizard = document.getElementById("lizard");
+const spock = document.getElementById("spock");
+
+const extraWeapons = (event) => {
+    addLizardSpock.style.display = "none";
+    noLizardSpock.style.display = "block";
+    lizard.style.display = "block";
+    spock.style.display = "block";
+}
+
+const removeExtraWeapons = () => {
+    addLizardSpock.style.display = "block";
+    noLizardSpock.style.display = "none";
+    lizard.style.display = "none";
+    spock.style.display = "none";
+}
+
+addLizardSpock.addEventListener("click", extraWeapons);
+noLizardSpock.addEventListener("click", removeExtraWeapons)

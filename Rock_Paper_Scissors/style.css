@@ -16,6 +16,31 @@ body {
 header {
     text-align: center;
     margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+#addLizardSpock,
+#noLizardSpock {
+    margin: 0 25%;
+    width: 50%;
+    padding: 3px 8px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: rgba(255, 248, 220, 0);
+    cursor: pointer;
+}
+
+#addLizardSpock:hover,
+#noLizardSpock:hover {
+    transform: scale(1.05);
+    color: rgb(231, 216, 216);
+    background-color: rgba(70, 34, 34, 0.8);
+    transition-duration: 0.6s;
+    box-shadow: 10px 10px 15px 0px #463c2eb7;
+}
+
+#noLizardSpock {
+    display: none;
 }
 
 nav {
@@ -76,6 +101,11 @@ h2 {
     font-size: 50px;
     border-radius: 5px;
     cursor: pointer;
+}
+
+#lizard,
+#spock {
+    display: none;
 }
 
 .weapon:hover {

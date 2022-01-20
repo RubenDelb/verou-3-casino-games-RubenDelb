@@ -17,6 +17,10 @@
 
 <body>
     <header><h1>Rock, Paper, Scissors!</h1></header>
+    <div id="extraWeaponsButtons">
+        <button id="addLizardSpock">Add Lizard & Spock!</button>
+        <button id="noLizardSpock">Remove Lizard & Spock!</button>
+    </div>
     <nav>
         <p id="userScore">Score: 0</p>
         <p id="pcScore">Opp. Score: 0</p>
@@ -28,10 +32,12 @@
     <main>
         <div class="gameSection">
             <h2>Choose your weapon!</h2>
-            <div class="weaponChoice">
+            <div class="weaponChoice" id="weaponChoice">
                 <button class="weapon" id="rock">&#128511;</button>
                 <button class="weapon" id="paper">&#129531;</button>
                 <button class="weapon" id="scissors">&#9986;</button>
+                <button class="weapon" id="lizard">Liz</button>
+                <button class="weapon" id="spock">Sp</button>
             </div>
             <button id="playButton">Let's play !</button>
         </div>
