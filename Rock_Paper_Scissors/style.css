@@ -90,8 +90,10 @@ h2 {
 
 .weaponChoice {
     display: flex;
-    flex-direction: row;
     justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
     margin: 20px 10vw;
 }
 
@@ -178,6 +180,9 @@ h2 {
 
     #pcScore {
         margin: 5px 0 10px 0;
-        color: #005eff33;
+    }
+
+    .weaponChoice {
+        margin: 20px 1vw;
     }
 }
