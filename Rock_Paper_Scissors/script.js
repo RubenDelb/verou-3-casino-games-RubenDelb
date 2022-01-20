@@ -1,12 +1,13 @@
 const message1 = document.getElementById("message1");
 const message2 = document.getElementById("message2");
 const message3 = document.getElementById("message3");
-const weaponz = document.querySelector(".weaponChoice")
+const weaponz = document.querySelector(".weaponChoice");
 const rock = document.getElementById("rock");
 const paper = document.getElementById("paper");
 const scissors = document.getElementById("scissors");
 const weaponArray = ['Rock', 'Paper', 'Scissors'];
 const random = Math.floor(Math.random() * weaponArray.length);
+const playButton = document.getElementById("playButton");
 const userScore = document.getElementById("userScore");
 const pcScore = document.getElementById("pcScore");
 const changeBgcolor = document.getElementById("changeBgcolor");
@@ -45,48 +46,66 @@ for (let weapon of weaponz.children) {
 const play = (event) => {
     const randomWeapon = weaponArray[Math.floor(Math.random() * weaponArray.length)];
     message2.innerHTML = "Opponent's weapon: " + randomWeapon;
+    playButton.innerHTML = "Play again!"
     if (randomWeapon == "Paper" && message1.innerHTML == "Your weapon: Rock") {
         oppScore += 1;
         pcScore.innerHTML = "Opp. Score: " + oppScore
+        message3.style.color = "#ffffff"
+        message3.style.textShadow = "0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00, 7px 7px 7px #CE5937";
         message3.innerHTML = "YOU LOSE"
     }
     if (randomWeapon == "Scissors" && message1.innerHTML == "Your weapon: Paper") {
         oppScore += 1;
         pcScore.innerHTML = "Opp. Score: " + oppScore
+        message3.style.color = "#ffffff"
+        message3.style.textShadow = "0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00, 7px 7px 7px #CE5937";
         message3.innerHTML = "YOU LOSE"
     }
     if (randomWeapon == "Rock" && message1.innerHTML == "Your weapon: Scissors") {
         oppScore += 1;
         pcScore.innerHTML = "Opp. Score: " + oppScore
+        message3.style.color = "#ffffff"
+        message3.style.textShadow = "0 -1px 4px #FFF, 0 -2px 10px #ff0, 0 -10px 20px #ff8000, 0 -18px 40px #F00, 7px 7px 7px #CE5937";
         message3.innerHTML = "YOU LOSE"
     }
     if (randomWeapon == "Rock" && message1.innerHTML == "Your weapon: Paper") {
         myScore += 1;
         userScore.innerHTML = "Score: " + myScore
+        message3.style.color = "#ffffff"
+        message3.style.textShadow = "0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 0px 0px 0px rgba(206,89,55,0)";
         message3.innerHTML = "YOU WIN"
     }
     if (randomWeapon == "Paper" && message1.innerHTML == "Your weapon: Scissors") {
         myScore += 1;
         userScore.innerHTML = "Score: " + myScore
+        message3.style.color = "#ffffff"
+        message3.style.textShadow = "0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 0px 0px 0px rgba(206,89,55,0)";
         message3.innerHTML = "YOU WIN"
     }
     if (randomWeapon == "Scissors" && message1.innerHTML == "Your weapon: Rock") {
         myScore += 1;
         userScore.innerHTML = "Score: " + myScore
+        message3.style.color = "#000000"
+        message3.style.textShadow = "0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #49ff18, 0 0 30px #49FF18, 0 0 40px #49FF18, 0 0 55px #49FF18, 0 0 75px #49ff18, 0px 0px 0px rgba(206,89,55,0)";
         message3.innerHTML = "YOU WIN"
     }
     if (randomWeapon == "Rock" && message1.innerHTML == "Your weapon: Rock") {
+        message3.style.color = "#ffffff"
+        message3.style.textShadow = "2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c";
         message3.innerHTML = "DRAW!"
     }
     if (randomWeapon == "Paper" && message1.innerHTML == "Your weapon: Paper") {
+        message3.style.color = "#ffffff"
+        message3.style.textShadow = "2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c";
         message3.innerHTML = "DRAW!"
     }
     if (randomWeapon == "Scissors" && message1.innerHTML == "Your weapon: Scissors") {
+        message3.style.color = "#ffffff"
+        message3.style.textShadow = "2px 2px 0 #bcbcbc, 4px 4px 0 #9c9c9c";
         message3.innerHTML = "DRAW!"
     }
 }
 
-const playButton = document.getElementById("playButton");
 playButton.addEventListener("click", play);
 
 const reset = () => {
@@ -100,6 +119,7 @@ const reset = () => {
     scissors.style.backgroundColor = "white";
     userScore.innerHTML = "Score: " + myScore ;
     pcScore.innerHTML = "Opp. Score: " + oppScore ;
+    playButton.innerHTML = "Play !"
 }
 
 const resetButton = document.getElementById("resetButton");
