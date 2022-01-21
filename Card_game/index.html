@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,27 @@
 
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
+    <button id="playBtn">Play</button>
+
+    <div id="dealerDiv">
+        <p id="message1">Dealer's hand:</p>
+        <ul id="dealerList">
+
+        </ul>
+    </div>
+    <div class="playerDiv">
+        <p>Your hand:</p>
+        <ul id="playerList">
+
+        </ul>
+        <div id="actionButtons">
+            <button class="actionBtn" id="hitBtn">HIT</button>
+            <button class="actionBtn" id="stayBtn">STAY</button>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
+
 </html>
