@@ -52,6 +52,38 @@ body {
     transform: rotateY(180deg);
 }
 
-/* img {
-    width: 100px;
-} */
+@media only screen and (max-width: 800px) {
+    .game-section {
+        width: 500px;
+        height: 500px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    body {
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+    }
+
+    .game-section {
+        width: 320px;
+        height: 320px;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        justify-items: center;
+    }
+
+    .memory-card {
+        width: calc(33.33% - 10px);
+        height: calc(33.33% - 10px);
+        position: relative;
+        margin: 5px;
+        transform: scale(1);
+        transform-style: preserve-3d;
+        transition: .5s;
+    }
+}
